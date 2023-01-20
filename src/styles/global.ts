@@ -1,4 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
+import { colors } from '../utils/colors';
  
 export const GlobalStyle = createGlobalStyle`
   * {
@@ -16,14 +17,22 @@ export const GlobalStyle = createGlobalStyle`
     @media(max-width: 720px){
       font-size: 87.5%;
     }
+
+    background: ${colors.primary[0]};
   }
 
   body {
     -webkit-font-smoothing: antialiased;
+    background: ${colors.primary[0]};
   }
 
   h1, h2, h3, h4, h5, h6, strong {
     font-weight: 600;
+    color: ${colors.texts[0]}
+  }
+
+  p, span {
+    color: ${colors.texts[0]}
   }
 
   button {

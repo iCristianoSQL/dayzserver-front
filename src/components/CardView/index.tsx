@@ -1,8 +1,11 @@
 import * as S from "./styles";
+import { useState, useEffect } from "react";
 import { Chip } from "../Chip";
 import CardImage from "../../assets/images/cardImage.png";
 
 import { CgRename } from "react-icons/cg";
+import { FiUser, FiServer } from "react-icons/fi";
+
 import { GiNetworkBars } from "react-icons/gi";
 
 import { IMTAServerResponse } from "./types";
@@ -29,17 +32,15 @@ export function CardView() {
       server.ip === "66.70.238.46" && server.port === 22613
   );
 
-  console.log(isLoading);
-
   return (
     <S.Card>
       <S.Image src={CardImage} alt="Imagem do Card" />
       {(!isError && (
         <>
           {(!isLoading && (
-            <>
-              <Chip text={findServer.name}>
-                <CgRename />
+            <div className="chips-box">
+              <Chip text={findServer.name} limit={49}>
+                <FiServer />
               </Chip>
               <Chip text={`${findServer.ip}:${findServer.port}`}>
                 <GiNetworkBars />
@@ -47,9 +48,9 @@ export function CardView() {
               <Chip
                 text={`${findServer.playerCount}/${findServer.playerSlots}`}
               >
-                <CgRename />
+                <FiUser />
               </Chip>
-            </>
+            </div>
           )) || <MySpinner />}
         </>
       )) || (

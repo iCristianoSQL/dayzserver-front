@@ -1,14 +1,11 @@
 import styled from "styled-components";
-import { motion } from 'framer-motion'
-import Background from "../../assets/images/background.jfif";
+import Carousel from "react-elastic-carousel";
+import { IMainImage } from "./types";
 
 export const MainSection = styled.section`
     height: 100vh;
     width: 100vw;
     position: relative;
-    background-size: 100% 100% !important;
-    background: url(${Background});
-    background-repeat: no-repeat;
 
     .main-image {
         width: 100%;
@@ -26,8 +23,17 @@ export const MainSection = styled.section`
     }
 `
 
-export const Test = styled(motion.div)`
-    height: 1000px;
-    width: 50px;
-    background-color: red;
-`
+export const ChangedCarousel = styled(Carousel)`
+  height: 100vh;
+  width: 100vw;
+  padding: 0;
+  margin: 0;
+  position: absolute;
+  .rec-slider-container {
+    margin: 0px !important;
+  }
+
+  .rec-pagination {
+    display: none;
+  }
+`;

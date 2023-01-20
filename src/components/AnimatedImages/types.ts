@@ -1,8 +1,8 @@
 export interface IAnimatedImageStyle {
-    width: string;
-    height: string;
-    position: string;
-    whiteAndBlack: boolean;
+    width?: string;
+    height?: string;
+    position?: string;
+    whiteAndBlack?: boolean;
 }
 
 export interface IAnimtedImage {

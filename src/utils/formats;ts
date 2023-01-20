@@ -1,0 +1,4 @@
+export function truncateText(text, limit) {
+  const truncatedText = text.substring(0, limit);
+  return truncatedText + (text.length > limit ? "..." : "");
+}

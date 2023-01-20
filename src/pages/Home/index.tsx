@@ -1,10 +1,10 @@
-import { MainImage } from "../../components";
-import { Test } from "../../components/MainImage/styles";
+import { Test } from "../../components/InitialInfos/styles";
+import { InitialInfos } from "../../components";
 
 export function Home() {
   return (
     <main>
-      {/* <MainImage /> */}
+      <InitialInfos />
       <Test
         initial={{ x: "-100%", opacity: 0.2 }}
         animate={{ x: "0%", opacity: 1 }}

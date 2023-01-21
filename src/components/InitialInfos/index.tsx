@@ -22,6 +22,7 @@ export function InitialInfos() {
 
   return (
     <S.MainSection>
+      {/* @ts-ignore */}
       <S.ChangedCarousel
         itemsToShow={1}
         isRTL={false}

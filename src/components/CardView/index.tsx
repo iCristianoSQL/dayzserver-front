@@ -1,5 +1,4 @@
 import * as S from "./styles";
-import { useState, useEffect } from "react";
 import { Chip } from "../Chip";
 import CardImage from "../../assets/images/cardImage.png";
 

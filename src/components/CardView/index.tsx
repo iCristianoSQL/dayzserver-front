@@ -2,15 +2,15 @@ import * as S from "./styles";
 import { Chip } from "../Chip";
 import CardImage from "../../assets/images/cardImage.png";
 
-import { CgRename } from "react-icons/cg";
-import { FiUser, FiServer } from "react-icons/fi";
+import { FiUser } from "react-icons/fi";
 
 import { GiNetworkBars } from "react-icons/gi";
 
 import { IMTAServerResponse } from "./types";
 import { getMTAStats } from "../../services/mtaServer";
 import { useQuery } from "react-query";
-import { MySpinner } from "../Spinner";
+import { toastMessage } from "../../utils/toastMessage";
+import { MySpinner } from "../index";
 
 export function CardView() {
   const {
@@ -22,40 +22,38 @@ export function CardView() {
       const response = await getMTAStats();
       return response;
     } catch (error) {
-      throw error;
+      toastMessage({
+        message: "Status do servidor não encontrado",
+        type: "error",
+      });
     }
   });
-
-  const findServer = mtaData?.data.find(
-    (server: IMTAServerResponse) =>
-      server.ip === "66.70.238.46" && server.port === 22613
-  );
 
   return (
     <S.Card>
       <S.Image src={CardImage} alt="Imagem do Card" />
-      {(!isError && (
+      {isError || !!!mtaData === false ? (
         <>
           {(!isLoading && (
             <div className="chips-box">
-              <Chip text={findServer.name} limit={49}>
-                <FiServer />
+              <Chip text={mtaData.name} limit={49}>
+                <S.IconOnlineServer />
               </Chip>
-              <Chip text={`${findServer.ip}:${findServer.port}`}>
+              <Chip text={`${mtaData.ip}:${mtaData.port}`}>
                 <GiNetworkBars />
               </Chip>
-              <Chip
-                text={`${findServer.playerCount}/${findServer.playerSlots}`}
-              >
+              <Chip text={`${mtaData.playerCount}/${mtaData.playerSlots}`}>
                 <FiUser />
               </Chip>
             </div>
           )) || <MySpinner />}
         </>
-      )) || (
-        <Chip text={"Servidor Offline!"}>
-          <CgRename />
-        </Chip>
+      ) : (
+        <div className="chips-box">
+          <Chip text={"Servidor Offline!"}>
+            <S.IconOfflineServer />
+          </Chip>
+        </div>
       )}
     </S.Card>
   );

@@ -1,4 +1,4 @@
-import { NavBar } from "../NavBar";
+import { Header } from "../Header";
 import * as S from "./styles";
 import Background from "../../assets/images/background.jfif";
 import Background2 from "../../assets/images/background2.jfif";
@@ -32,13 +32,25 @@ export function InitialInfos() {
         enableMouseSwipe={false}
         autoPlaySpeed={3000}
       >
-        <img src={Background} alt="" style={{ display: "flex" }} />
-        <img src={Background2} alt="" style={{ display: "flex" }} />
-        <img src={Background3} alt="" style={{ display: "flex" }} />
+        <img
+          src={Background}
+          alt="Background Site"
+          style={{ display: "flex" }}
+        />
+        <img
+          src={Background2}
+          alt="Background Site"
+          style={{ display: "flex" }}
+        />
+        <img
+          src={Background3}
+          alt="Background Site"
+          style={{ display: "flex" }}
+        />
       </S.ChangedCarousel>
       <div className="contents">
         <CardView />
-        <NavBar className="main-nav" transparent={scrollPosition} />
+        <Header className="main-nav" transparent={scrollPosition} />
       </div>
     </S.MainSection>
   );

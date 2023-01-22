@@ -1,3 +1,4 @@
+import { useState } from "react";
 import Modal from "react-modal";
 import { useDispatch } from "react-redux";
 import { ModalProps } from "../../../utils/@types";
@@ -5,14 +6,31 @@ import TextInput from "../../Inputs/TextInput";
 import modalFirstUserImage from "../../../assets/images/modalFirstUserImage.png";
 
 import * as S from "./styles";
+import { Button } from "../../Button";
+import { colors } from "../../../utils/colors";
+import { changeUser } from "../../../redux/userSlice";
+import { toastMessage } from "../../../utils/toastMessage";
 
 export const ModalUserName = ({ isOpen, onRequestClose }: ModalProps) => {
+  const [name, setName] = useState("");
   const dispatch = useDispatch();
+
+  const handleTest = () => {
+    if (name.length <= 15 && name.length > 3) {
+      dispatch(changeUser(name));
+      toastMessage({ message: `Bem vindo(a) ${name}`, type: "success" });
+      onRequestClose();
+    } else {
+      toastMessage({
+        message: "Porfavor, entre três e quinze caracteres",
+        type: "error",
+      });
+    }
+  };
 
   return (
     <Modal
       isOpen={isOpen}
-      onRequestClose={onRequestClose}
       overlayClassName="react-modal-overlay"
       className="react-modal-content"
     >
@@ -23,7 +41,15 @@ export const ModalUserName = ({ isOpen, onRequestClose }: ModalProps) => {
           você aqui, porfavor, <strong>digite o seu nome</strong> abaixo e{" "}
           <strong>leia as regras</strong>
         </p>
-        <TextInput label="" type="text" placeholder="Digite o seu nome!" />
+        <TextInput
+          label=""
+          type="text"
+          placeholder="Digite o seu nome!"
+          onChange={(e) => setName(e.target.value)}
+        />
+        <Button background={colors.valid[0]} onClick={handleTest}>
+          Confirmar
+        </Button>
       </S.Container>
     </Modal>
   );

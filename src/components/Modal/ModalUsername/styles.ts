@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { colors } from "../../../utils/colors";
 
 export const Container = styled(motion.section)`
-height: 350px;
+height: 320px;
 width: 100%;
 display: flex;
 flex-direction: column;
@@ -19,7 +19,7 @@ p, strong {
     text-align: center;
 }
 
-input {
+input, button {
     margin-top: 1rem;
 }
 `

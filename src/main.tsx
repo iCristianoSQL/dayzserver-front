@@ -4,7 +4,7 @@ import App from "./App";
 import { QueryClientProvider } from "react-query";
 import { queryClient } from "./services/queryClient";
 import { Provider } from "react-redux";
-import store from "./redux/store";
+import { store } from "./redux/store";
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>

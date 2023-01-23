@@ -15,6 +15,7 @@ img {
 }
 
 p, strong {
+    overflow: hidden;
     color: ${colors.primary[0]};
     text-align: center;
 }

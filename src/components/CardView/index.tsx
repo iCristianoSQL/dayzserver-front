@@ -1,18 +1,17 @@
 import * as S from "./styles";
 import { Chip } from "../Chip";
-import CardImage from "../../assets/images/cardImage.png";
 
 import { FiUser } from "react-icons/fi";
 
 import { GiNetworkBars } from "react-icons/gi";
 
-import { IMTAServerResponse } from "./types";
 import { getMTAStats } from "../../services/mtaServer";
 import { useQuery } from "react-query";
 import { toastMessage } from "../../utils/toastMessage";
 import { MySpinner } from "../index";
 
 export function CardView() {
+  const cardImage = "https://i.ibb.co/XLnrPm7/card-Image.jpg"
   const {
     data: mtaData,
     isLoading,
@@ -31,7 +30,7 @@ export function CardView() {
 
   return (
     <S.Card>
-      <S.Image src={CardImage} alt="Imagem do Card" />
+      <S.Image src={cardImage} alt="Imagem do Card" />
       {isError || !!!mtaData === false ? (
         <>
           {(!isLoading && (

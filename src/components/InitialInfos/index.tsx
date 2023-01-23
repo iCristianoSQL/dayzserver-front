@@ -1,13 +1,16 @@
 import { Header } from "../Header";
 import * as S from "./styles";
-import Background from "../../assets/images/background.jfif";
-import Background2 from "../../assets/images/background2.jfif";
-import Background3 from "../../assets/images/background3.jfif";
+
 import { CardView } from "../CardView";
 import { useEffect, useState } from "react";
 
 export function InitialInfos() {
   const [scrollPosition, setScrollPosition] = useState(0);
+  const images = {
+    background: "https://i.ibb.co/LxgmhZM/background.jpg",
+    background2: "https://i.ibb.co/NpQVfff/background2.jpg",
+    background3: "https://i.ibb.co/YNV8tj9/background3.jpg",
+  };
 
   useEffect(() => {
     function handleScroll() {
@@ -33,17 +36,17 @@ export function InitialInfos() {
         autoPlaySpeed={3000}
       >
         <img
-          src={Background}
+          src={images.background}
           alt="Background Site"
           style={{ display: "flex" }}
         />
         <img
-          src={Background2}
+          src={images.background2}
           alt="Background Site"
           style={{ display: "flex" }}
         />
         <img
-          src={Background3}
+          src={images.background3}
           alt="Background Site"
           style={{ display: "flex" }}
         />

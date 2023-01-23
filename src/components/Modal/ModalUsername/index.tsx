@@ -1,19 +1,20 @@
-import { useState } from "react";
+import * as S from "./styles";
+import { useEffect, useState } from "react";
 import Modal from "react-modal";
 import { useDispatch } from "react-redux";
 import { ModalProps } from "../../../utils/@types";
 import TextInput from "../../Inputs/TextInput";
-import modalFirstUserImage from "../../../assets/images/modalFirstUserImage.png";
 
-import * as S from "./styles";
 import { Button } from "../../Button";
 import { colors } from "../../../utils/colors";
-import { changeUser } from "../../../redux/userSlice";
+import { changeUser } from "../../../redux/userName/actions";
 import { toastMessage } from "../../../utils/toastMessage";
-
 export const ModalUserName = ({ isOpen, onRequestClose }: ModalProps) => {
   const [name, setName] = useState("");
   const dispatch = useDispatch();
+
+  const modalFirstUserImage =
+    "https://i.ibb.co/gSfb59Y/modal-First-User-Image.png";
 
   const handleTest = () => {
     if (name.length <= 15 && name.length > 3) {

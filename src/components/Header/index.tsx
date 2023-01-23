@@ -8,10 +8,11 @@ import { CgProfile } from "react-icons/cg";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { truncateText } from "../../utils/formats";
+import { userLogged } from "../../redux/userName/selector";
 
 export function Header({ className, transparent }: IHeader) {
   const navigate = useNavigate();
-  const { userName } = useSelector((state: any) => state.user);
+  const userName = useSelector(userLogged);
 
   return (
     <S.Header className={className} transparent={transparent}>

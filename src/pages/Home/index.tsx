@@ -1,10 +1,9 @@
-import { InitialInfos, ModalUserName } from "../../components";
+import { Footer, InitialInfos, ModalUserName } from "../../components";
 import { useState, useEffect, useCallback } from "react";
 import { useSelector } from "react-redux";
 
 export function Home() {
   const [open, setOpen] = useState(false);
-
   const { userName } = useSelector((state: any) => state.user);
 
   useEffect(() => {
@@ -26,6 +25,7 @@ export function Home() {
         height="405"
         scrolling="no"
       ></iframe>
+      <Footer />
       <ModalUserName isOpen={open} onRequestClose={handleClose} />
     </main>
   );

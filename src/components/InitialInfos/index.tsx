@@ -10,6 +10,8 @@ export function InitialInfos() {
     background: "https://i.ibb.co/LxgmhZM/background.jpg",
     background2: "https://i.ibb.co/NpQVfff/background2.jpg",
     background3: "https://i.ibb.co/YNV8tj9/background3.jpg",
+    background4: "https://i.ibb.co/4FJ6Nxy/background4.jpg",
+    background5: "https://i.ibb.co/Xjgn0K6/background5.jpg",
   };
 
   useEffect(() => {
@@ -33,7 +35,7 @@ export function InitialInfos() {
         showEmptySlots={false}
         enableAutoPlay
         enableMouseSwipe={false}
-        autoPlaySpeed={3000}
+        autoPlaySpeed={3500}
       >
         <img
           src={images.background}
@@ -47,6 +49,16 @@ export function InitialInfos() {
         />
         <img
           src={images.background3}
+          alt="Background Site"
+          style={{ display: "flex" }}
+        />
+        <img
+          src={images.background4}
+          alt="Background Site"
+          style={{ display: "flex" }}
+        />
+        <img
+          src={images.background5}
           alt="Background Site"
           style={{ display: "flex" }}
         />

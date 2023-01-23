@@ -21,7 +21,6 @@ export const Header = styled.header<IHeader>`
             gap: 1.8rem;
 
             .listed-by-mapping {
-                border-bottom: 1px solid  ${colors.primary[0]};
 
                 &:hover {
                     color: ${colors.danger[0]};

@@ -1,32 +1,12 @@
-import { Footer, InitialInfos, ModalUserName } from "../../components";
-import { useState, useEffect, useCallback } from "react";
-import { useSelector } from "react-redux";
+import { DescriptiveComponent, SectionForPage } from "../../components";
+import withLayout from "../../hocs";
 
-export function Home() {
-  const [open, setOpen] = useState(false);
-  const { userName } = useSelector((state: any) => state.user);
-
-  useEffect(() => {
-    if (!!!userName) {
-      setOpen(true);
-    }
-  }, []);
-
-  const handleClose = useCallback(() => {
-    setOpen(false);
-  }, []);
-
+function HomePage() {
   return (
-    <main>
-      <InitialInfos />
-      <iframe
-        src="https://xat.com/embed/chat.php#id=220519996&gn=BMGServer"
-        width="540"
-        height="405"
-        scrolling="no"
-      ></iframe>
-      <Footer />
-      <ModalUserName isOpen={open} onRequestClose={handleClose} />
-    </main>
+    <SectionForPage>
+      <DescriptiveComponent />
+    </SectionForPage>
   );
 }
+
+export default withLayout(HomePage);

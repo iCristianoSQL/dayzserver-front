@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components';
+import styled, { createGlobalStyle } from 'styled-components';
 import { colors } from '../utils/colors';
  
 export const GlobalStyle = createGlobalStyle`
@@ -121,3 +121,9 @@ export const GlobalStyle = createGlobalStyle`
     }
 `;
  
+export const SectionForPage = styled.section`
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 85px;
+`

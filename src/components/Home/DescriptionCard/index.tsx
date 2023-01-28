@@ -1,9 +1,12 @@
 import * as S from "./styles";
+import { BiSupport } from "react-icons/bi";
+import { IDescriptionCard } from "./types";
 
-export function DescriptionCard() {
+export function DescriptionCard({ icon, text }: IDescriptionCard) {
   return (
     <S.Container>
-      <p>oi</p>
+      <div className="box-icon">{icon}</div>
+      <p>{text}</p>
     </S.Container>
   );
 }

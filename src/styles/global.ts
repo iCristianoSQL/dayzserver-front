@@ -33,7 +33,7 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   p, span, li {
-    color: ${colors.texts[0]};
+    color: ${colors.texts[0]} !important;
     font-family: 'Roboto';
   }
 

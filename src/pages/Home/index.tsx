@@ -1,4 +1,8 @@
-import { AdvantagesOfBmg, CityContents } from "../../components";
+import {
+  AdvantagesOfBmg,
+  CityContents,
+  StoreHightLights,
+} from "../../components";
 import withLayout from "../../hocs";
 
 function HomePage() {
@@ -6,6 +10,7 @@ function HomePage() {
     <>
       <AdvantagesOfBmg />
       <CityContents />
+      <StoreHightLights />
     </>
   );
 }

@@ -15,6 +15,7 @@ export {Footer} from "./Footer"
 export {DescriptionCard} from "./Home/AdvantagesOfBmg/DescriptionCard"
 export {AdvantagesOfBmg} from "./Home/AdvantagesOfBmg"
 export {CityContents} from "./Home/CityContents"
+export {StoreHightLights} from "./Home/StoreHighlights"
 
 // global styles
 export {SectionForPage} from "../styles/global"

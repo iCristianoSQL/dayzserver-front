@@ -27,7 +27,7 @@
 export const textsForCards = {
     support: 'Nossa equipe de suporte 24/7 está sempre online e disponível para ajudar com qualquer dúvida. Agradecemos a sua confiança em nós.',
     network: 'Nós garantimos um ping baixo em nossos servidores para proporcionar uma melhor experiência de usuário e garantir uma conexão rápida e estável.',
-    fast: 'O servidor possui um alto desempenho em termos de frames por segundo (FPS) devido à otimização dos scripts e à escolha cuidadosa dos mesmos. Isso garante que o servidor seja rápido e responsivo,',
+    fast: 'O servidor possui um alto FPS devido à otimização dos scripts e à escolha cuidadosa dos mesmos. Isso garante que o servidor seja rápido e responsivo,',
     challenger: 'O servidor é focado em jogos PVP (Player versus Player) e modo competitivo intenso, além de também ser focado em Roleplay ( RP ).'
 }
 

@@ -1,11 +1,12 @@
-import { DescriptiveComponent, SectionForPage } from "../../components";
+import { AdvantagesOfBmg, CityContents } from "../../components";
 import withLayout from "../../hocs";
 
 function HomePage() {
   return (
-    <SectionForPage>
-      <DescriptiveComponent />
-    </SectionForPage>
+    <>
+      <AdvantagesOfBmg />
+      <CityContents />
+    </>
   );
 }
 

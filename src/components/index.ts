@@ -10,8 +10,11 @@ export {ModalUserName} from "./Modal/ModalUsername";
 export {MySpinner} from "./Spinner";
 export {Button} from "./Button"
 export {Footer} from "./Footer"
-export {DescriptiveComponent} from "./Home/DescriptiveComponent"
-export {DescriptionCard} from "./Home/DescriptionCard"
+
+//home
+export {DescriptionCard} from "./Home/AdvantagesOfBmg/DescriptionCard"
+export {AdvantagesOfBmg} from "./Home/AdvantagesOfBmg"
+export {CityContents} from "./Home/CityContents"
 
 // global styles
 export {SectionForPage} from "../styles/global"

@@ -126,5 +126,11 @@ export const SectionForPage = styled.section`
     margin-left: auto;
     margin-right: auto;
     padding: 0 85px;
-    margin-top: 1rem;
+    margin-top: 5.5rem;
+
+    h1 {
+    font-family: 'Bebas Neue';
+    font-size: 2rem;
+    font-weight: 500;
+}
 `

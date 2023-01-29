@@ -11,7 +11,7 @@ import { toastMessage } from "../../utils/toastMessage";
 import { MySpinner } from "../index";
 
 export function CardView() {
-  const cardImage = "https://i.ibb.co/XLnrPm7/card-Image.jpg"
+  const cardImage = "https://i.ibb.co/XLnrPm7/card-Image.jpg";
   const {
     data: mtaData,
     isLoading,
@@ -32,21 +32,17 @@ export function CardView() {
     <S.Card>
       <S.Image src={cardImage} alt="Imagem do Card" />
       {isError || !!!mtaData === false ? (
-        <>
-          {(!isLoading && (
-            <div className="chips-box">
-              <Chip text={mtaData.name} limit={49}>
-                <S.IconOnlineServer />
-              </Chip>
-              <Chip text={`${mtaData.ip}:${mtaData.port}`}>
-                <GiNetworkBars />
-              </Chip>
-              <Chip text={`${mtaData.playerCount}/${mtaData.playerSlots}`}>
-                <FiUser />
-              </Chip>
-            </div>
-          )) || <MySpinner />}
-        </>
+        <div className="chips-box">
+          <Chip text={mtaData.name} limit={49}>
+            <S.IconOnlineServer />
+          </Chip>
+          <Chip text={`${mtaData.ip}:${mtaData.port}`}>
+            <GiNetworkBars />
+          </Chip>
+          <Chip text={`${mtaData.playerCount}/${mtaData.playerSlots}`}>
+            <FiUser />
+          </Chip>
+        </div>
       ) : (
         <div className="chips-box">
           <Chip text={"Servidor Offline!"}>
